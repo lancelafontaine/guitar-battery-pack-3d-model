@@ -34,10 +34,10 @@ module drilled_base() {
 }
 
 module lid() {
-    translate([-0.5,0,0]) {
-        cube([59,18.8,3], center=true);
+    translate([-5.5,0,0]) {
+        cube([54,18.8,3], center=true);
         translate([-1.5,0,-0.75]) {
-            cube([61,17,1.5], center=true);
+            cube([56,18.8,1.5], center=true);
         }
     }
     latch();
@@ -48,29 +48,29 @@ module lid_without_latch() {
     translate([-1,0,-0.75]) {
         cube([62,19,1.5], center=true);
     }
-    translate([1,0,0]) {
-        cube([62,15,1.2], center=true);
+    translate([1,0,-0.75]) {
+        cube([62,19,1.5], center=true);
     }
 }
 
 module latch_down() {
-    rotate(a=75, v=[0,1,0]) {
-        cube([6,14,0.7], center=true);
+    rotate(a=55, v=[0,1,0]) {
+        cube([9,14,2], center=true);
     }
 }
 module latch_up() {
-    rotate(a=83, v=[0,-1,0]) {
-        cube([8,14,0.7], center=true);
+    rotate(a=55, v=[0,-1,0]) {
+        cube([10,14,2], center=true);
     }
 }
 
 module latch() {
-    translate([29.2,0,-1.53]){
+    translate([23,0,-2.8]){
         latch_down();
-        translate([1.0,0,1]) {
+        translate([4.5,0,0.5]) {
             latch_up();
-            translate([0.25,-6.5,0]) {
-                cube([1.5, 13, 1]);
+            translate([0.45,-7,0.8]) {
+                cube([5, 14, 1.5]);
             }
         }
     }
@@ -86,4 +86,5 @@ module final_base() {
 
 //drilled_base();
 lid();
+//lid_without_latch();
 //final_base();
